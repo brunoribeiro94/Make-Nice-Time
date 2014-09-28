@@ -30,7 +30,7 @@ abstract class makeNiceTime {
      * @see $Languages
      * @var str 
      */
-    public static $DefaultLanguage = 'pt-br';
+    public static $DefaultLanguage = 'eng';
 
     /**
      * seconds that make up the time measurement.
@@ -182,7 +182,7 @@ abstract class makeNiceTime {
     public static function MakeNew($datetime) {
         $etime = time() - strtotime($datetime);
         if ($etime < 1) {
-            return self::$Languages[self::$DefaultLanguage]['CURRENT']; // 'Agora mesmo';
+            return self::$Languages[self::$DefaultLanguage]['CURRENT'];
         }
         foreach (self::$values as $secs => $str) {
             $d = $etime / $secs;
