@@ -181,6 +181,7 @@ abstract class makeNiceTime {
      */
     public static function MakeNew($datetime) {
         $etime = time() - strtotime($datetime);
+        // is just now ?
         if ($etime < 1) {
             return self::$Languages[self::$DefaultLanguage]['CURRENT'];
         }
@@ -189,6 +190,7 @@ abstract class makeNiceTime {
             if ($d >= 1) {
                 $r = round($d);
                 $l = self::$Languages[self::$DefaultLanguage][$str];
+                // check the amount is greater than or equal to 1
                 $result = ($r > 1) ? $r . ' ' . $l[1] : '1 ' . $l[0];
                 return sprintf(self::$Languages[self::$DefaultLanguage]['MESSAGE'], $result);
             }
