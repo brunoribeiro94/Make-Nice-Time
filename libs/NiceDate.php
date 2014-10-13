@@ -56,6 +56,7 @@ abstract class makeNiceTime {
      * @var array 
      */
     private static $Languages = array(
+        // Português
         'pt-br' =>
         array(
             'YEAR' => array(
@@ -85,6 +86,7 @@ abstract class makeNiceTime {
             'CURRENT' => 'Agora mesmo',
             'MESSAGE' => 'há %s atrás'
         ),
+        // English
         'eng' =>
         array(
             'YEAR' => array(
@@ -114,6 +116,7 @@ abstract class makeNiceTime {
             'CURRENT' => 'just now',
             'MESSAGE' => '%s ago'
         ),
+        // Español - Beta
         'es' =>
         array(
             'YEAR' => array(
@@ -143,6 +146,7 @@ abstract class makeNiceTime {
             'CURRENT' => 'justamente ahora',
             'MESSAGE' => 'en %s hace'
         ),
+        // Italiano - Beta
         'it' =>
         array(
             'YEAR' => array(
@@ -172,6 +176,36 @@ abstract class makeNiceTime {
             'CURRENT' => 'proprio adesso',
             'MESSAGE' => 'in %s fa'
         ),
+        // Русский - Beta
+        'ru' =>
+        array(
+            'YEAR' => array(
+                'год',
+                'года'
+            ),
+            'MONTH' => array(
+                'месяц',
+                'месяца'
+            ),
+            'DAY' => array(
+                'день',
+                'дня'
+            ),
+            'HOUR' => array(
+                'час',
+                'часа'
+            ),
+            'MIN' => array(
+                'минута',
+                'минуты'
+            ),
+            'SEC' => array(
+                'секунду',
+                'секунды'
+            ),
+            'CURRENT' => 'прямо сейчас',
+            'MESSAGE' => '%s назад'
+        )
     );
 
     /**
