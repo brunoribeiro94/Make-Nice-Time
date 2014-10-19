@@ -205,7 +205,37 @@ abstract class makeNiceTime {
             ),
             'CURRENT' => 'прямо сейчас',
             'MESSAGE' => '%s назад'
-        )
+        ),
+        // Français
+        'fr' =>
+        array(
+            'YEAR' => array(
+                'année',
+                'années'
+            ),
+            'MONTH' => array(
+                'mois ',
+                'meses'
+            ),
+            'DAY' => array(
+                'jour',
+                'jours'
+            ),
+            'HOUR' => array(
+                'heure',
+                'heures'
+            ),
+            'MIN' => array(
+                'minute',
+                'minutes'
+            ),
+            'SEC' => array(
+                'seconde',
+                'secondes'
+            ),
+            'CURRENT' => "tout à l'heure",
+            'MESSAGE' => 'ya %s'
+        ),
     );
 
     /**
