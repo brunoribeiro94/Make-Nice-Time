@@ -5,15 +5,10 @@ example output : 1 day ago, 2 days ago, 1 month ago, 2 months ago …
 ### Ready Languages
 * English
 * Español - Beta
+* Français - Beta
 * Italiano - Beta
 * Português
 * Русский - Beta
-* Français - Beta
-
-## Requirements
-
-* **PHP 5.3.7+**, PHP 5.4+ or PHP 5.5+
-* **MySQL 5** database
 
 ## Quick Install
 ```php
@@ -27,7 +22,8 @@ require_once( __DIR__ . '/libs/NiceDate.php');
 // Loading all required classes
 require_once( __DIR__ . '/libs/NiceDate.php');
 
-//finish
+$now = date('Y-m-d H:i:s', strtotime('-2 week'));
+echo makeNiceTime::MakeNew($now);
 
 ?>
 ```
