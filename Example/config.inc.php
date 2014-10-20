@@ -13,7 +13,6 @@
  * define('DB_USER', 'root');
  * The password of the above user
  * define('DB_PASS', 'xxx');
- * define('DB_PREFIX', 'prefix_'); or NULL
  */
  
 define('DB_HOST', '127.0.0.1');
