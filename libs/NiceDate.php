@@ -28,7 +28,7 @@ abstract class makeNiceTime {
      * standard language
      * please check if the language already exists in the array
      * @see $Languages
-     * @var str 
+     * @var string 
      */
     public static $DefaultLanguage = 'eng';
 
@@ -235,6 +235,36 @@ abstract class makeNiceTime {
             ),
             'CURRENT' => "tout à l'heure",
             'MESSAGE' => 'ya %s'
+        ),
+        // Japonese 日本の - Beta
+        'ja' =>
+        array(
+            'YEAR' => array(
+                '年間',
+                '年'
+            ),
+            'MONTH' => array(
+                'ヶ月',
+                'ヶ月'
+            ),
+            'DAY' => array(
+                '日',
+                '日'
+            ),
+            'HOUR' => array(
+                '時間',
+                '時間'
+            ),
+            'MIN' => array(
+                '分',
+                '分'
+            ),
+            'SEC' => array(
+                '秒',
+                '秒'
+            ),
+            'CURRENT' => 'ちょうど今',
+            'MESSAGE' => '%s 前'
         ),
     );
 
