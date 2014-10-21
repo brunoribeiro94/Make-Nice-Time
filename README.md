@@ -7,6 +7,7 @@ example output : 1 day ago, 2 days ago, 1 month ago, 2 months ago …
 * Español - Beta
 * Français - Beta
 * Italiano - Beta
+* Japonese 日本の - Beta
 * Português
 * Русский - Beta
 
