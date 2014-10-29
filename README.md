@@ -48,6 +48,25 @@ foreach ($result as $value) {
 ?>
 ```
 
+## Examples Limit
+```php
+<?php
+// Loading all required classes
+require_once( __DIR__ . '/libs/NiceDate.php');
+
+// Our date will be formatted  is current date + 12 weeks
+$now = date('Y-m-d H:i:s', strtotime('+12 week'));
+
+// limit date is current date + 5 week, if that date exercised limit
+$limit = date('Y-m-d H:i:s', strtotime('+5 week'));
+
+// output format optional, Standard timestamp format Y-m-d H:i:s
+$output = 'M d Y'; // example May 2 20014
+
+echo makeNiceTime::MakeNew($now, $limit, $output);
+?>
+```
+
 ## Contribute
 
 Please commit only in *develop* branch. The *master* branch will always contain the stable version.
