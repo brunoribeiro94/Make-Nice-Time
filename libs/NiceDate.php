@@ -269,12 +269,36 @@ abstract class makeNiceTime {
     );
 
     /**
+     * Time format is UNIX timestamp or
+     * PHP strtotime compatible strings
+     * @param Datetime $time1 Date used
+     * @param Datetime $time2 Limit time
+     * @return boolean
+     */
+    private static function dateDiff($time1, $time2) {
+        // If not numeric then convert texts to unix timestamps
+        if (!is_int($time1)) {
+            $time1 = strtotime($time1);
+        }
+        if (!is_int($time2)) {
+            $time2 = strtotime($time2);
+        }
+        return ($time1 > $time2) ? true : false;
+    }
+    
+    /**
      * Create nice date time
      * @param datetime $datetime Timestamp Format
+     * @param String $LimitDate Differences in days to show another format, use false to disable
+     * @param String $OutputFormat Output format if datetime interval exercise days - Standard timestamp format
      * @return string
      */
-    public static function MakeNew($datetime) {
+    public static function MakeNew($datetime, $LimitDate = false, $OutputFormat = 'Y-m-d H:i:s') {
         $etime = time() - strtotime($datetime);
+        // check limit
+        if ($limit == true) {
+            return date($OutputFormat, strtotime($datetime));
+        }
         // is just now ?
         if ($etime < 1) {
             return self::$Languages[self::$DefaultLanguage]['CURRENT'];
