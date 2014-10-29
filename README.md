@@ -57,7 +57,7 @@ require_once( __DIR__ . '/libs/NiceDate.php');
 // Our date will be formatted  is current date + 12 weeks
 $now = date('Y-m-d H:i:s', strtotime('+12 week'));
 
-// limit date is current date + 5 week, if that date exercised limit
+// limit date is current date + 5 week, in that case is smaller than our data
 $limit = date('Y-m-d H:i:s', strtotime('+5 week'));
 
 // output format optional, Standard timestamp format Y-m-d H:i:s
