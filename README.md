@@ -61,7 +61,7 @@ $now = date('Y-m-d H:i:s', strtotime('+12 week'));
 $limit = date('Y-m-d H:i:s', strtotime('+5 week'));
 
 // output format optional, Standard timestamp format Y-m-d H:i:s
-$output = 'M d Y'; // example May 2 20014
+$output = 'M d Y'; // example May 2 2014
 
 echo makeNiceTime::MakeNew($now, $limit, $output);
 ?>
