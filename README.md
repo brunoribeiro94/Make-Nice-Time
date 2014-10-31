@@ -17,7 +17,7 @@ example output : 1 day ago, 2 days ago, 1 month ago, 2 months ago …
 require_once( __DIR__ . '/libs/NiceDate.php');
 ```
 
-## Examples
+## Simple Example
 ```php
 <?php
 // Loading all required classes
@@ -29,7 +29,7 @@ echo makeNiceTime::MakeNew($now);
 ?>
 ```
 
-## Examples Database
+## Example Database
 ```php
 <?php
 // Loading all required classes
@@ -48,7 +48,7 @@ foreach ($result as $value) {
 ?>
 ```
 
-## Examples Limit
+## Example Limit
 ```php
 <?php
 // Loading all required classes
