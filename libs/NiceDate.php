@@ -116,7 +116,7 @@ abstract class makeNiceTime {
             'CURRENT' => 'just now',
             'MESSAGE' => '%s ago'
         ),
-        // Español - Beta
+        // Español
         'es' =>
         array(
             'YEAR' => array(
@@ -146,7 +146,7 @@ abstract class makeNiceTime {
             'CURRENT' => 'justamente ahora',
             'MESSAGE' => 'en %s hace'
         ),
-        // Italiano - Beta
+        // Italiano
         'it' =>
         array(
             'YEAR' => array(
@@ -206,7 +206,7 @@ abstract class makeNiceTime {
             'CURRENT' => 'прямо сейчас',
             'MESSAGE' => '%s назад'
         ),
-        // Français
+        // Français - Beta
         'fr' =>
         array(
             'YEAR' => array(
@@ -266,6 +266,36 @@ abstract class makeNiceTime {
             'CURRENT' => 'ちょうど今',
             'MESSAGE' => '%s 前'
         ),
+        // Deutsch - Beta
+        'deu' =>
+        array(
+            'YEAR' => array(
+                'jahr',
+                'jahre'
+            ),
+            'MONTH' => array(
+                'monat',
+                'monate'
+            ),
+            'DAY' => array(
+                'tag',
+                'tage'
+            ),
+            'HOUR' => array(
+                'stunde',
+                'stunden'
+            ),
+            'MIN' => array(
+                'minute',
+                'minuten'
+            ),
+            'SEC' => array(
+                'sekunde',
+                'sekunden'
+            ),
+            'CURRENT' => 'soeben',
+            'MESSAGE' => 'Vor %s'
+        )
     );
 
     /**
