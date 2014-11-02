@@ -4,9 +4,10 @@ example output : 1 day ago, 2 days ago, 1 month ago, 2 months ago …
 
 ### Ready Languages
 * English
-* Español - Beta
+* Español
+* Deutsch - Beta
 * Français - Beta
-* Italiano - Beta
+* Italiano
 * Japonese 日本の - Beta
 * Português
 * Русский - Beta
