@@ -295,6 +295,36 @@ abstract class makeNiceTime {
             ),
             'CURRENT' => 'soeben',
             'MESSAGE' => 'Vor %s'
+        ),
+        // Nederlands Dutch - Beta
+        'nl' =>
+        array(
+            'YEAR' => array(
+                'jaar',
+                'jaar'
+            ),
+            'MONTH' => array(
+                'maanden',
+                'maanden'
+            ),
+            'DAY' => array(
+                'uur',
+                'uur'
+            ),
+            'HOUR' => array(
+                'stunde',
+                'stunden'
+            ),
+            'MIN' => array(
+                'minuut',
+                'minuten'
+            ),
+            'SEC' => array(
+                'seconde',
+                'seconden'
+            ),
+            'CURRENT' => 'zoëven',
+            'MESSAGE' => '%s geleden'
         )
     );
 
