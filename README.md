@@ -15,6 +15,7 @@ example output : 1 day ago, 2 days ago, 1 month ago, 2 months ago …
 
 ## Quick Install
 ```php
+<?php
 // Loading class required
 require_once( __DIR__ . '/libs/NiceDate.php');
 ```
