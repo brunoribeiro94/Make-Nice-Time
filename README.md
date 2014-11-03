@@ -68,6 +68,16 @@ echo makeNiceTime::MakeNew($now, $limit, $output);
 ?>
 ```
 
+## Example Choose Language
+```php
+<?php
+$now = date('Y-m-d H:i:s', strtotime('-2 week'));
+// defines Portuguese language as default, even being in another language standard.
+makeNiceTime::$DefaultLanguage = 'pt-br';
+echo makeNiceTime::MakeNew($now);
+?>
+```
+
 ## Contribute
 
 Please commit only in *develop* branch. The *master* branch will always contain the stable version.
