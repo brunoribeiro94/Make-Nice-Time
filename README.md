@@ -13,6 +13,11 @@ example output : 1 day ago, 2 days ago, 1 month ago, 2 months ago …
 * Português (Portuguese)
 * Русский (Russian) - Beta
 
+### Key Features
+* It's easy to use.
+* Multiple languages
+* Parameter limit in days (used to reverse the nice datetime to a specific format).
+
 ## Quick Install
 ```php
 <?php
