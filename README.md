@@ -33,7 +33,7 @@ require_once( __DIR__ . '/libs/NiceDate.php');
 
 $now = date('Y-m-d H:i:s', strtotime('-2 week'));
 echo makeNiceTime::MakeNew($now);
-
+// example output in English : 2 weeks ago
 ?>
 ```
 
@@ -82,6 +82,7 @@ $now = date('Y-m-d H:i:s', strtotime('-2 week'));
 // defines Portuguese language as default, even being in another language standard.
 makeNiceTime::$DefaultLanguage = 'pt-br';
 echo makeNiceTime::MakeNew($now);
+// Exemplo de saída : Há 2 semanas atrás
 ?>
 ```
 
