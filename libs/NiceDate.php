@@ -354,15 +354,24 @@ abstract class makeNiceTime {
      * @return string
      */
     public static function MakeNew($datetime, $LimitDate = false, $OutputFormat = 'Y-m-d H:i:s') {
+        // If not numeric then convert texts to unix timestamps
+        if (!is_int($datetime)) {
+            $datetime = strtotime($datetime);
+        }
+        
         $etime = time() - strtotime($datetime);
+        
         // check limit
         if ($limit == true) {
             return date($OutputFormat, strtotime($datetime));
         }
+        
         // is just now ?
         if ($etime < 1) {
             return self::$Languages[self::$DefaultLanguage]['CURRENT'];
         }
+        
+        // generate nice date
         foreach (self::$values as $secs => $str) {
             $d = $etime / $secs;
             if ($d >= 1) {
