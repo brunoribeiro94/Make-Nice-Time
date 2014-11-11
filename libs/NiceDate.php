@@ -329,6 +329,16 @@ abstract class makeNiceTime {
     );
 
     /**
+     * Returns the word of the language set by default
+     * @param string $key The key will return
+     * @return string
+     */
+    private static function _GetL($key) {
+        $l = self::$Languages[self::$DefaultLanguage][$key];
+        return !isset($l) ? 'undefined' : $l;
+    }
+
+    /**
      * If not numeric then convert data to unix timestamps
      * @param mixed $time Date
      * @return integer
@@ -346,6 +356,7 @@ abstract class makeNiceTime {
      * @return boolean
      */
     private static function dateDiff($time1, $time2) {
+        // If not numeric then convert texts to unix timestamps
         $time1 = self::_CheckTime($time1);
         $time2 = self::_CheckTime($time2);
 
@@ -369,7 +380,7 @@ abstract class makeNiceTime {
 
         // is just now ?
         if ($etime < 1) {
-            return self::$Languages[self::$DefaultLanguage]['CURRENT'];
+            return self::_GetL('CURRENT');
         }
 
         // generate nice date
@@ -377,10 +388,10 @@ abstract class makeNiceTime {
             $d = $etime / $secs;
             if ($d >= 1) {
                 $r = round($d);
-                $l = self::$Languages[self::$DefaultLanguage][$str];
+                $l = self::_GetL($str);
                 // check the amount is greater than or equal to 1
                 $result = ($r > 1) ? $r . ' ' . $l[1] : '1 ' . $l[0];
-                return sprintf(self::$Languages[self::$DefaultLanguage]['MESSAGE'], $result);
+                return sprintf(self::_GetL('MESSAGE'), $result);
             }
         }
     }
