@@ -329,6 +329,16 @@ abstract class makeNiceTime {
     );
 
     /**
+     * If not numeric then convert data to unix timestamps
+     * @param mixed $time Date
+     * @return integer
+     */
+    private static function _CheckTime($time) {
+        $result = !is_int($time) ? strtotime($time) : $time;
+        return $result;
+    }
+
+    /**
      * Time format is UNIX timestamp or
      * PHP strtotime compatible strings
      * @param Datetime $time1 Date used
@@ -336,16 +346,12 @@ abstract class makeNiceTime {
      * @return boolean
      */
     private static function dateDiff($time1, $time2) {
-        // If not numeric then convert texts to unix timestamps
-        if (!is_int($time1)) {
-            $time1 = strtotime($time1);
-        }
-        if (!is_int($time2)) {
-            $time2 = strtotime($time2);
-        }
+        $time1 = self::_CheckTime($time1);
+        $time2 = self::_CheckTime($time2);
+
         return ($time1 > $time2) ? true : false;
     }
-    
+
     /**
      * Create nice date time
      * @param datetime $datetime Timestamp Format
@@ -354,23 +360,18 @@ abstract class makeNiceTime {
      * @return string
      */
     public static function MakeNew($datetime, $LimitDate = false, $OutputFormat = 'Y-m-d H:i:s') {
-        // If not numeric then convert texts to unix timestamps
-        if (!is_int($datetime)) {
-            $datetime = strtotime($datetime);
-        }
-        
-        $etime = time() - strtotime($datetime);
-        
+        $etime = time() - self::_CheckTime($datetime);
+
         // check limit
-        if ($limit == true) {
-            return date($OutputFormat, strtotime($datetime));
+        if ($LimitDate == true) {
+            return date($OutputFormat, self::_CheckTime($datetime));
         }
-        
+
         // is just now ?
         if ($etime < 1) {
             return self::$Languages[self::$DefaultLanguage]['CURRENT'];
         }
-        
+
         // generate nice date
         foreach (self::$values as $secs => $str) {
             $d = $etime / $secs;
