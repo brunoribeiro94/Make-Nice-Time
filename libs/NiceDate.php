@@ -341,6 +341,7 @@ abstract class makeNiceTime {
     /**
      * If not numeric then convert data to unix timestamps
      * @param mixed $time Date
+     * @access private
      * @return integer
      */
     private static function _CheckTime($time) {
@@ -353,6 +354,7 @@ abstract class makeNiceTime {
      * PHP strtotime compatible strings
      * @param Datetime $time1 Date used
      * @param Datetime $time2 Limit time
+     * @access private
      * @return boolean
      */
     private static function dateDiff($time1, $time2) {
@@ -368,6 +370,7 @@ abstract class makeNiceTime {
      * @param datetime $datetime Timestamp Format
      * @param String $LimitDate Differences in days to show another format, use false to disable
      * @param String $OutputFormat Output format if datetime interval exercise days - Standard timestamp format
+     * @access public
      * @return string
      */
     public static function MakeNew($datetime, $LimitDate = false, $OutputFormat = 'Y-m-d H:i:s') {
