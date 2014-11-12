@@ -22,14 +22,14 @@ example output : 1 day ago, 2 days ago, 1 month ago, 2 months ago …
 ```php
 <?php
 // Loading class required
-require_once( __DIR__ . '/libs/NiceDate.php');
+require_once('libs/NiceDate.php');
 ```
 
 ## Simple Example
 ```php
 <?php
 // Loading all required classes
-require_once( __DIR__ . '/libs/NiceDate.php');
+require_once('libs/NiceDate.php');
 
 $now = date('Y-m-d H:i:s', strtotime('-2 week'));
 echo makeNiceTime::MakeNew($now);
@@ -41,8 +41,8 @@ echo makeNiceTime::MakeNew($now);
 ```php
 <?php
 // Loading all required classes
-require_once( __DIR__ . '/libs/NiceDate.php');
-require_once( __DIR__ . '/config.inc.php');
+require_once('libs/NiceDate.php');
+require_once('config.inc.php');
 
 $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 $query = mysqli_query($mysqli, "SELECT * FROM menu");
@@ -60,7 +60,7 @@ foreach ($result as $value) {
 ```php
 <?php
 // Loading all required classes
-require_once( __DIR__ . '/libs/NiceDate.php');
+require_once('libs/NiceDate.php');
 
 // Our date will be formatted  is current date + 12 weeks
 $now = date('Y-m-d H:i:s', strtotime('+12 week'));
@@ -78,6 +78,9 @@ echo makeNiceTime::MakeNew($now, $limit, $output);
 ## Example Choose Language
 ```php
 <?php
+// Loading all required classes
+require_once('libs/NiceDate.php');
+
 $now = date('Y-m-d H:i:s', strtotime('-2 week'));
 // defines Portuguese language as default, even being in another language standard.
 makeNiceTime::$DefaultLanguage = 'pt-br';
