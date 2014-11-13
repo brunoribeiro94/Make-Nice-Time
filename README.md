@@ -76,6 +76,19 @@ echo makeNiceTime::MakeNew($now, $limit, $output);
 ?>
 ```
 
+## Automatic Choose the Language
+```php
+<?php
+// Loading all required classes
+require_once('libs/NiceDate.php');
+
+$now = date('Y-m-d H:i:s', strtotime('-2 week'));
+// defines language is chosen based on browser language
+makeNiceTime::$DefaultLanguage = 'auto';
+echo makeNiceTime::MakeNew($now);
+?>
+```
+
 ## Example Choose Language
 ```php
 <?php

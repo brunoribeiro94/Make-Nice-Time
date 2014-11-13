@@ -20,13 +20,14 @@
  * Simple abstract class for make a nice time
  * @example Example Check all example
  * @author Bruno Ribeiro <bruno.espertinho@gmail.com>
- * @version 1
+ * @version 0.1.4
  */
 abstract class makeNiceTime {
 
     /**
      * standard language
      * please check if the language already exists in the array
+     * @access public
      * @see $Languages
      * @var string 
      */
@@ -34,6 +35,7 @@ abstract class makeNiceTime {
 
     /**
      * seconds that make up the time measurement.
+     * @access private
      * @var array 
      */
     private static $values = array(
@@ -53,6 +55,7 @@ abstract class makeNiceTime {
 
     /**
      * languages ​​already ready for use
+     * @access private
      * @var array 
      */
     private static $Languages = array(
@@ -359,12 +362,24 @@ abstract class makeNiceTime {
     );
 
     /**
+     * Get the browser language code
+     * @access private
+     * @return string
+     */
+    private static function GetLanguageBrowser() {
+        $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+        return $lang;
+    }
+    
+    /**
      * Returns the word of the language set by default
      * @access private
      * @param string $key The key will return
      * @return string
      */
     private static function _GetL($key) {
+        // verifies that it is in automatic mode
+        $set = (self::$DefaultLanguage) == 'auto' ? self::GetLanguageBrowser() : self::$DefaultLanguage;
         $l = self::$Languages[self::$DefaultLanguage][$key];
         return !isset($l) ? 'undefined' : $l;
     }
