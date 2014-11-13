@@ -325,7 +325,37 @@ abstract class makeNiceTime {
             ),
             'CURRENT' => 'zoëven',
             'MESSAGE' => '%s geleden'
-        )
+        ),
+        // Suomi Finnish - Beta
+        'nl' =>
+        array(
+            'YEAR' => array(
+                'vuosi',
+                'vuotta'
+            ),
+            'MONTH' => array(
+                'kuukausi',
+                'kuukautta'
+            ),
+            'DAY' => array(
+                'päivä',
+                'päivää'
+            ),
+            'HOUR' => array(
+                'tunti',
+                'tuntia'
+            ),
+            'MIN' => array(
+                'minuutti',
+                'minuuttia'
+            ),
+            'SEC' => array(
+                'sekunti',
+                'sekuntia'
+            ),
+            'CURRENT' => 'juuri nyt',
+            'MESSAGE' => '%s sitten'
+        ),
     );
 
     /**
