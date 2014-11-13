@@ -56,7 +56,7 @@ abstract class makeNiceTime {
      * @var array 
      */
     private static $Languages = array(
-        // Português
+        // Português (Portuguese)
         'pt-br' =>
         array(
             'YEAR' => array(
@@ -116,7 +116,7 @@ abstract class makeNiceTime {
             'CURRENT' => 'just now',
             'MESSAGE' => '%s ago'
         ),
-        // Español
+        // Español (Spanish)
         'es' =>
         array(
             'YEAR' => array(
@@ -146,7 +146,7 @@ abstract class makeNiceTime {
             'CURRENT' => 'justamente ahora',
             'MESSAGE' => 'en %s hace'
         ),
-        // Italiano
+        // Italiano (Italian)
         'it' =>
         array(
             'YEAR' => array(
@@ -176,7 +176,7 @@ abstract class makeNiceTime {
             'CURRENT' => 'proprio adesso',
             'MESSAGE' => 'in %s fa'
         ),
-        // Русский - Beta
+        // Русский (Russian) - Beta
         'ru' =>
         array(
             'YEAR' => array(
@@ -206,7 +206,7 @@ abstract class makeNiceTime {
             'CURRENT' => 'прямо сейчас',
             'MESSAGE' => '%s назад'
         ),
-        // Français - Beta
+        // Français (Français) - Beta
         'fr' =>
         array(
             'YEAR' => array(
@@ -236,7 +236,7 @@ abstract class makeNiceTime {
             'CURRENT' => "tout à l'heure",
             'MESSAGE' => 'ya %s'
         ),
-        // Japonese 日本の - Beta
+        // Japonese (日本の) - Beta
         'ja' =>
         array(
             'YEAR' => array(
@@ -266,7 +266,7 @@ abstract class makeNiceTime {
             'CURRENT' => 'ちょうど今',
             'MESSAGE' => '%s 前'
         ),
-        // Deutsch - Beta
+        // Nederlands (Deutsch) - Beta
         'deu' =>
         array(
             'YEAR' => array(
@@ -296,7 +296,7 @@ abstract class makeNiceTime {
             'CURRENT' => 'soeben',
             'MESSAGE' => 'Vor %s'
         ),
-        // Nederlands Dutch - Beta
+        // Nederlands (Dutch) - Beta
         'nl' =>
         array(
             'YEAR' => array(
@@ -326,8 +326,8 @@ abstract class makeNiceTime {
             'CURRENT' => 'zoëven',
             'MESSAGE' => '%s geleden'
         ),
-        // Suomi Finnish - Beta
-        'nl' =>
+        // Suomi (Finnish) - Beta
+        'fi' =>
         array(
             'YEAR' => array(
                 'vuosi',
@@ -360,6 +360,7 @@ abstract class makeNiceTime {
 
     /**
      * Returns the word of the language set by default
+     * @access private
      * @param string $key The key will return
      * @return string
      */
@@ -370,8 +371,8 @@ abstract class makeNiceTime {
 
     /**
      * If not numeric then convert data to unix timestamps
-     * @param mixed $time Date
      * @access private
+     * @param mixed $time Date
      * @return integer
      */
     private static function _CheckTime($time) {
@@ -382,9 +383,9 @@ abstract class makeNiceTime {
     /**
      * Time format is UNIX timestamp or
      * PHP strtotime compatible strings
+     * @access private
      * @param Datetime $time1 Date used
      * @param Datetime $time2 Limit time
-     * @access private
      * @return boolean
      */
     private static function dateDiff($time1, $time2) {
@@ -397,13 +398,14 @@ abstract class makeNiceTime {
 
     /**
      * Create nice date time
+     * @access public
      * @param datetime $datetime Timestamp Format
      * @param String $LimitDate Differences in days to show another format, use false to disable
      * @param String $OutputFormat Output format if datetime interval exercise days - Standard timestamp format
-     * @access public
      * @return string
      */
     public static function MakeNew($datetime, $LimitDate = false, $OutputFormat = 'Y-m-d H:i:s') {
+        // is necessary to transform the data into int
         $etime = time() - self::_CheckTime($datetime);
 
         // check limit
