@@ -16,8 +16,9 @@ example output : 1 day ago, 2 days ago, 1 month ago, 2 months ago …
 
 ### Key Features
 * It's easy to use.
-* Multiple languages
+* Multiple languages.
 * Parameter limit in days (used to reverse the nice datetime to a specific format).
+*  Automatic Choose the Language.
 
 ## Quick Install
 ```php
