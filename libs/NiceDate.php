@@ -359,6 +359,36 @@ abstract class makeNiceTime {
             'CURRENT' => 'juuri nyt',
             'MESSAGE' => '%s sitten'
         ),
+        // ελληνικά (Greek) - Beta
+         'pt-br' =>
+        array(
+            'YEAR' => array(
+                'χρόνος',
+                'χρόνια'
+            ),
+            'MONTH' => array(
+                'μήνα',
+                'μήνες'
+            ),
+            'DAY' => array(
+                'ημέρα',
+                'ημέρες'
+            ),
+            'HOUR' => array(
+                'ώρα',
+                'ώρες'
+            ),
+            'MIN' => array(
+                'λεπτό',
+                'λεπτά'
+            ),
+            'SEC' => array(
+                'δευτερόλεπτο',
+                'δευτερόλεπτα'
+            ),
+            'CURRENT' => 'μόλις τώρα',
+            'MESSAGE' => '%s πριν'
+        )
     );
 
     /**
