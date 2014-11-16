@@ -13,6 +13,7 @@ example output : 1 day ago, 2 days ago, 1 month ago, 2 months ago …
 * Português (Portuguese)
 * Русский (Russian) - Beta
 * Suomi (Finnish) - Beta
+* ελληνικά (Greek) - Beta
 
 ### Key Features
 * It's easy to use.
