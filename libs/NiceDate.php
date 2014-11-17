@@ -410,8 +410,11 @@ abstract class makeNiceTime {
     private static function _GetL($key) {
         // verifies that it is in automatic mode
         $set = (self::$DefaultLanguage) == 'auto' ? self::GetLanguageBrowser() : self::$DefaultLanguage;
+        // set custom lanaguage
         $l = self::$Languages[self::$DefaultLanguage][$key];
-        return !isset($l) ? 'undefined' : $l;
+        // set current language
+        $c = self::$Languages['eng'][$key];
+        return !isset($l) ? $c : $l;
     }
 
     /**
