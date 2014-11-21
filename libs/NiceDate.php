@@ -20,7 +20,7 @@
  * Simple abstract class for make a nice time
  * @example Example Check all example
  * @author Bruno Ribeiro <bruno.espertinho@gmail.com>
- * @version 0.1.4
+ * @version 0.1.5
  */
 abstract class makeNiceTime {
 
@@ -360,7 +360,7 @@ abstract class makeNiceTime {
             'MESSAGE' => '%s sitten'
         ),
         // ελληνικά (Greek) - Beta
-         'pt-br' =>
+         'el' =>
         array(
             'YEAR' => array(
                 'χρόνος',
