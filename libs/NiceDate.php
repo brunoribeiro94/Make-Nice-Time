@@ -209,7 +209,7 @@ abstract class makeNiceTime {
             'CURRENT' => 'прямо сейчас',
             'MESSAGE' => '%s назад'
         ),
-        // Français (Français) - Beta
+        // Français (Français)
         'fr' =>
         array(
             'YEAR' => array(
@@ -217,8 +217,8 @@ abstract class makeNiceTime {
                 'années'
             ),
             'MONTH' => array(
-                'mois ',
-                'meses'
+                'mois',
+                'mois'
             ),
             'DAY' => array(
                 'jour',
