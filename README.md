@@ -7,7 +7,7 @@ example output : 1 day ago, 2 days ago, 1 month ago, 2 months ago …
 * Español (Spanish)
 * Deutsch (German) - Beta
 * Nederlands (Dutch) - Beta
-* Français (French) - Beta
+* Français (French)
 * Italiano (Italian)
 * Japonese (日本の) - Beta
 * Português (Portuguese)
@@ -35,8 +35,8 @@ require_once('libs/NiceDate.php');
 require_once('libs/NiceDate.php');
 
 $now = date('Y-m-d H:i:s', strtotime('-2 week'));
-echo makeNiceTime::MakeNew($now);
-// example output in English : 2 weeks ago
+// show result
+echo makeNiceTime::MakeNew($now); // Example output in English : 2 weeks ago
 ?>
 ```
 
@@ -45,14 +45,18 @@ echo makeNiceTime::MakeNew($now);
 <?php
 // Loading all required classes
 require_once('libs/NiceDate.php');
-require_once('config.inc.php');
+require_once('config.inc.php'); // Configuration file of the database
 
+//create connection
 $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 $query = mysqli_query($mysqli, "SELECT * FROM menu");
 $result = mysqli_fetch_array($query);
 
+// listing data result
 foreach ($result as $value) {
+  // create nice date time
   $dat = makeNiceTime::MakeNew($value['data']);
+  // show result
   echo $value['data'] . "<br>" . $dat . "<hr>";
 }
 
@@ -73,7 +77,7 @@ $limit = date('Y-m-d H:i:s', strtotime('+5 week'));
 
 // output format optional, Standard timestamp format Y-m-d H:i:s
 $output = 'M d Y'; // example May 2 2014
-
+// show result
 echo makeNiceTime::MakeNew($now, $limit, $output);
 ?>
 ```
@@ -87,6 +91,7 @@ require_once('libs/NiceDate.php');
 $now = date('Y-m-d H:i:s', strtotime('-2 week'));
 // defines language is chosen based on browser language
 makeNiceTime::$DefaultLanguage = 'auto';
+// show result
 echo makeNiceTime::MakeNew($now);
 ?>
 ```
@@ -100,8 +105,9 @@ require_once('libs/NiceDate.php');
 $now = date('Y-m-d H:i:s', strtotime('-2 week'));
 // defines Portuguese language as default, even being in another language standard.
 makeNiceTime::$DefaultLanguage = 'pt-br';
-echo makeNiceTime::MakeNew($now);
-// Exemplo de saída : Há 2 semanas atrás
+// show result
+echo makeNiceTime::MakeNew($now); // Exemplo de saída : Há 2 semanas atrás
+
 ?>
 ```
 
