@@ -2,6 +2,10 @@
 Class PHP make a nice time from timstamp
 example output : 1 day ago, 2 days ago, 1 month ago, 2 months ago …
 
+## Requirements
+
+* **PHP 5.0.3+**
+
 ### Ready Languages
 * English
 * Español (Spanish)
