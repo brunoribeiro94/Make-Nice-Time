@@ -17,23 +17,31 @@
  */
 
 /**
- * Simple abstract class for make a nice time
- * @example Example Check all example
+ * Simple abstract class for make a nice date time
+ * @see https://github.com/offboard/Make-Nice-Time/blob/master/README.md#example-database
  * @author Bruno Ribeiro <bruno.espertinho@gmail.com>
- * @version 1
+ * @version 0.1.6
  */
 abstract class makeNiceTime {
 
     /**
      * standard language
      * please check if the language already exists in the array
+     * @access public
      * @see $Languages
      * @var string 
      */
-    public static $DefaultLanguage = 'eng';
+    public static $DefaultLanguage = 'auto';
+
+    /**
+     * Minimum required version of PHP
+     * @var float 
+     */
+    private $PHPminVersion = '5.0.3';
 
     /**
      * seconds that make up the time measurement.
+     * @access private
      * @var array 
      */
     private static $values = array(
@@ -53,10 +61,11 @@ abstract class makeNiceTime {
 
     /**
      * languages ​​already ready for use
+     * @access private
      * @var array 
      */
     private static $Languages = array(
-        // Português
+        // Português (Portuguese)
         'pt-br' =>
         array(
             'YEAR' => array(
@@ -84,10 +93,11 @@ abstract class makeNiceTime {
                 'segundos'
             ),
             'CURRENT' => 'Agora mesmo',
-            'MESSAGE' => 'há %s atrás'
+            'MESSAGE' => 'há %s atrás',
+            'ERROPHP' => 'Desculpe, essa classe só roda na versão maior ou igual a %f do PHP !'
         ),
         // English
-        'eng' =>
+        'en' =>
         array(
             'YEAR' => array(
                 'year',
@@ -114,9 +124,10 @@ abstract class makeNiceTime {
                 'secs'
             ),
             'CURRENT' => 'just now',
-            'MESSAGE' => '%s ago'
+            'MESSAGE' => '%s ago',
+            'ERROPHP' => 'Sorry, this class only runs in the larger version or equal to %f of PHP!'
         ),
-        // Español
+        // Español (Spanish)
         'es' =>
         array(
             'YEAR' => array(
@@ -144,9 +155,10 @@ abstract class makeNiceTime {
                 'segundos'
             ),
             'CURRENT' => 'justamente ahora',
-            'MESSAGE' => 'en %s hace'
+            'MESSAGE' => 'en %s hace',
+            'ERROPHP' => 'Lo sentimos, esta clase sólo se ejecuta en la versión más grande o igual a %f del PHP !'
         ),
-        // Italiano
+        // Italiano (Italian)
         'it' =>
         array(
             'YEAR' => array(
@@ -174,9 +186,10 @@ abstract class makeNiceTime {
                 'secondi'
             ),
             'CURRENT' => 'proprio adesso',
-            'MESSAGE' => 'in %s fa'
+            'MESSAGE' => 'in %s fa',
+            'ERROPHP' => NULL // finish
         ),
-        // Русский - Beta
+        // Русский (Russian) - Beta
         'ru' =>
         array(
             'YEAR' => array(
@@ -204,9 +217,10 @@ abstract class makeNiceTime {
                 'секунды'
             ),
             'CURRENT' => 'прямо сейчас',
-            'MESSAGE' => '%s назад'
+            'MESSAGE' => '%s назад',
+            'ERROPHP' => NULL // finish
         ),
-        // Français - Beta
+        // Français (Français)
         'fr' =>
         array(
             'YEAR' => array(
@@ -214,8 +228,8 @@ abstract class makeNiceTime {
                 'années'
             ),
             'MONTH' => array(
-                'mois ',
-                'meses'
+                'mois',
+                'mois'
             ),
             'DAY' => array(
                 'jour',
@@ -234,9 +248,10 @@ abstract class makeNiceTime {
                 'secondes'
             ),
             'CURRENT' => "tout à l'heure",
-            'MESSAGE' => 'ya %s'
+            'MESSAGE' => 'ya %s',
+            'ERROPHP' => NULL // finish
         ),
-        // Japonese 日本の - Beta
+        // Japonese (日本の) - Beta
         'ja' =>
         array(
             'YEAR' => array(
@@ -264,9 +279,10 @@ abstract class makeNiceTime {
                 '秒'
             ),
             'CURRENT' => 'ちょうど今',
-            'MESSAGE' => '%s 前'
+            'MESSAGE' => '%s 前',
+            'ERROPHP' => NULL // finish
         ),
-        // Deutsch - Beta
+        // Nederlands (Deutsch) - Beta
         'deu' =>
         array(
             'YEAR' => array(
@@ -294,9 +310,10 @@ abstract class makeNiceTime {
                 'sekunden'
             ),
             'CURRENT' => 'soeben',
-            'MESSAGE' => 'Vor %s'
+            'MESSAGE' => 'Vor %s',
+            'ERROPHP' => NULL // finish
         ),
-        // Nederlands Dutch - Beta
+        // Nederlands (Dutch) - Beta
         'nl' =>
         array(
             'YEAR' => array(
@@ -324,23 +341,132 @@ abstract class makeNiceTime {
                 'seconden'
             ),
             'CURRENT' => 'zoëven',
-            'MESSAGE' => '%s geleden'
+            'MESSAGE' => '%s geleden',
+            'ERROPHP' => NULL // finish
+        ),
+        // Suomi (Finnish) - Beta
+        'fi' =>
+        array(
+            'YEAR' => array(
+                'vuosi',
+                'vuotta'
+            ),
+            'MONTH' => array(
+                'kuukausi',
+                'kuukautta'
+            ),
+            'DAY' => array(
+                'päivä',
+                'päivää'
+            ),
+            'HOUR' => array(
+                'tunti',
+                'tuntia'
+            ),
+            'MIN' => array(
+                'minuutti',
+                'minuuttia'
+            ),
+            'SEC' => array(
+                'sekunti',
+                'sekuntia'
+            ),
+            'CURRENT' => 'juuri nyt',
+            'MESSAGE' => '%s sitten',
+            'ERROPHP' => NULL // finish
+        ),
+        // ελληνικά (Greek) - Beta
+        'el' =>
+        array(
+            'YEAR' => array(
+                'χρόνος',
+                'χρόνια'
+            ),
+            'MONTH' => array(
+                'μήνα',
+                'μήνες'
+            ),
+            'DAY' => array(
+                'ημέρα',
+                'ημέρες'
+            ),
+            'HOUR' => array(
+                'ώρα',
+                'ώρες'
+            ),
+            'MIN' => array(
+                'λεπτό',
+                'λεπτά'
+            ),
+            'SEC' => array(
+                'δευτερόλεπτο',
+                'δευτερόλεπτα'
+            ),
+            'CURRENT' => 'μόλις τώρα',
+            'MESSAGE' => '%s πριν',
+            'ERROPHP' => NULL // finish
         )
     );
 
     /**
+     * Magic Method
+     * @return void
+     */
+    public function __construct() {
+        $msg = sprintf('Sorry, this class does not run on a PHP version smaller than PHP %f !', $this->PHPminVersion);
+        if (!$this->checkMinVersionPHP()) {
+            error_log($msg);
+            die($msg);
+        }
+    }
+
+    /**
+     * Check the minimum required version of PHP
+     * 
+     * @return boolean
+     */
+    private function checkMinVersionPHP() {
+        if (version_compare(PHP_VERSION, $this->PHPminVersion, '<')) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Get the browser language code
+     * 
+     * @access private
+     * @return string
+     */
+    private static function GetLanguageBrowser() {
+        $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+        return $lang;
+    }
+
+    /**
      * Returns the word of the language set by default
+     * 
      * @param string $key The key will return
+     * 
+     * @access private
      * @return string
      */
     private static function _GetL($key) {
-        $l = self::$Languages[self::$DefaultLanguage][$key];
-        return !isset($l) ? 'undefined' : $l;
+        // verifies that it is in automatic mode
+        $set = (self::$DefaultLanguage) == 'auto' ? self::GetLanguageBrowser() : self::$DefaultLanguage;
+        // set custom lanaguage
+        $l = self::$Languages[$set][$key];
+        // set current language
+        $c = self::$Languages['en'][$key];
+        return !isset($l) ? $c : $l;
     }
 
     /**
      * If not numeric then convert data to unix timestamps
+     * 
      * @param mixed $time Date
+     * 
+     * @access private
      * @return integer
      */
     private static function _CheckTime($time) {
@@ -351,8 +477,11 @@ abstract class makeNiceTime {
     /**
      * Time format is UNIX timestamp or
      * PHP strtotime compatible strings
+     * 
      * @param Datetime $time1 Date used
      * @param Datetime $time2 Limit time
+     * 
+     * @access private
      * @return boolean
      */
     private static function dateDiff($time1, $time2) {
@@ -365,12 +494,16 @@ abstract class makeNiceTime {
 
     /**
      * Create nice date time
+     * 
      * @param datetime $datetime Timestamp Format
      * @param String $LimitDate Differences in days to show another format, use false to disable
      * @param String $OutputFormat Output format if datetime interval exercise days - Standard timestamp format
+     * 
+     * @access public
      * @return string
      */
     public static function MakeNew($datetime, $LimitDate = false, $OutputFormat = 'Y-m-d H:i:s') {
+        // is necessary to transform the data into int
         $etime = time() - self::_CheckTime($datetime);
 
         // check limit
@@ -383,7 +516,7 @@ abstract class makeNiceTime {
             return self::_GetL('CURRENT');
         }
 
-        // generate nice date
+        // generate nice date time
         foreach (self::$values as $secs => $str) {
             $d = $etime / $secs;
             if ($d >= 1) {
