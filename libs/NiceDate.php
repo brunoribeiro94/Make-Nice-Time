@@ -37,7 +37,7 @@ abstract class makeNiceTime {
      * Minimum required version of PHP
      * @var float 
      */
-    private $PHPminVersion = '5.0.3';
+    private static $PHPminVersion = '5.0.3';
 
     /**
      * seconds that make up the time measurement.
@@ -94,7 +94,7 @@ abstract class makeNiceTime {
             ),
             'CURRENT' => 'Agora mesmo',
             'MESSAGE' => 'há %s atrás',
-            'ERROPHP' => 'Desculpe, essa classe só roda na versão maior ou igual a %f do PHP !'
+            'ERROPHP' => 'Desculpe, essa classe só roda na versão maior ou igual a %s do PHP !'
         ),
         // English
         'en' =>
@@ -125,7 +125,7 @@ abstract class makeNiceTime {
             ),
             'CURRENT' => 'just now',
             'MESSAGE' => '%s ago',
-            'ERROPHP' => 'Sorry, this class only runs in the larger version or equal to %f of PHP!'
+            'ERROPHP' => 'Sorry, this class only runs in the larger version or equal to %s of PHP!'
         ),
         // Español (Spanish)
         'es' =>
@@ -156,7 +156,7 @@ abstract class makeNiceTime {
             ),
             'CURRENT' => 'justamente ahora',
             'MESSAGE' => 'en %s hace',
-            'ERROPHP' => 'Lo sentimos, esta clase sólo se ejecuta en la versión más grande o igual a %f del PHP !'
+            'ERROPHP' => 'Lo sentimos, esta clase sólo se ejecuta en la versión más grande o igual a %s del PHP !'
         ),
         // Italiano (Italian)
         'it' =>
@@ -409,24 +409,12 @@ abstract class makeNiceTime {
     );
 
     /**
-     * Magic Method
-     * @return void
-     */
-    public function __construct() {
-        $msg = sprintf('Sorry, this class does not run on a PHP version smaller than PHP %f !', $this->PHPminVersion);
-        if (!$this->checkMinVersionPHP()) {
-            error_log($msg);
-            die($msg);
-        }
-    }
-
-    /**
      * Check the minimum required version of PHP
      * 
      * @return boolean
      */
-    private function checkMinVersionPHP() {
-        if (version_compare(PHP_VERSION, $this->PHPminVersion, '<')) {
+    private static function checkMinVersionPHP() {
+        if (version_compare(PHP_VERSION, self::$PHPminVersion, '<')) {
             return false;
         }
         return true;
@@ -503,6 +491,13 @@ abstract class makeNiceTime {
      * @return string
      */
     public static function MakeNew($datetime, $LimitDate = false, $OutputFormat = 'Y-m-d H:i:s') {
+        // Check version of PHP for initiate class
+        $msg = sprintf(self::_GetL('ERROPHP'), self::$PHPminVersion);
+        if (!self::checkMinVersionPHP()) {
+            error_log($msg);
+            die($msg);
+        }
+
         // is necessary to transform the data into int
         $etime = time() - self::_CheckTime($datetime);
 
