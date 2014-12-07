@@ -187,7 +187,7 @@ abstract class makeNiceTime {
             ),
             'CURRENT' => 'proprio adesso',
             'MESSAGE' => 'in %s fa',
-            'ERROPHP' => NULL // finish
+            'ERROPHP' => 'Siamo spiacenti, questa classe viene eseguito solo nella versione maggiore o uguale a %s di PHP!'
         ),
         // Русский (Russian) - Beta
         'ru' =>
