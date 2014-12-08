@@ -220,7 +220,7 @@ abstract class makeNiceTime {
             'MESSAGE' => '%s назад',
             'ERROPHP' => NULL // finish
         ),
-        // Français (Français)
+        // French (Français)
         'fr' =>
         array(
             'YEAR' => array(
@@ -249,7 +249,7 @@ abstract class makeNiceTime {
             ),
             'CURRENT' => "tout à l'heure",
             'MESSAGE' => 'ya %s',
-            'ERROPHP' => NULL // finish
+            'ERROPHP' => 'Désolé, cette classe ne fonctionne que dans la version plus grande ou égale à %s de PHP!'
         ),
         // Japonese (日本の) - Beta
         'ja' =>
