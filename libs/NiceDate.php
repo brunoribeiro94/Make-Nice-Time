@@ -218,7 +218,7 @@ abstract class makeNiceTime {
             ),
             'CURRENT' => 'прямо сейчас',
             'MESSAGE' => '%s назад',
-            'ERROPHP' => NULL // finish
+            'ERROPHP' => 'извините, этот класс работает только в большей версии или равна %s РНР!'
         ),
         // French (Français)
         'fr' =>
