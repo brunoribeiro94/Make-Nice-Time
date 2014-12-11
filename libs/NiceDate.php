@@ -280,9 +280,9 @@ abstract class makeNiceTime {
             ),
             'CURRENT' => 'ちょうど今',
             'MESSAGE' => '%s 前',
-            'ERROPHP' => NULL // finish
+            'ERROPHP' => '申し訳ありませんが、このクラスでは唯一の拡大版で実行するか、PHPの%sに等しい！'
         ),
-        // Nederlands (Deutsch) - Beta
+        // German (Deutsch) - Beta
         'deu' =>
         array(
             'YEAR' => array(
@@ -311,7 +311,7 @@ abstract class makeNiceTime {
             ),
             'CURRENT' => 'soeben',
             'MESSAGE' => 'Vor %s',
-            'ERROPHP' => NULL // finish
+            'ERROPHP' => 'Läuft diese Klasse nur in der größeren Version oder gleich %s von PHP!' // finish
         ),
         // Nederlands (Dutch) - Beta
         'nl' =>
@@ -342,7 +342,7 @@ abstract class makeNiceTime {
             ),
             'CURRENT' => 'zoëven',
             'MESSAGE' => '%s geleden',
-            'ERROPHP' => NULL // finish
+            'ERROPHP' => 'Deze klasse rijdt alleen in de grotere versie of gelijk aan %s van PHP!' // finish
         ),
         // Suomi (Finnish) - Beta
         'fi' =>
@@ -373,7 +373,7 @@ abstract class makeNiceTime {
             ),
             'CURRENT' => 'juuri nyt',
             'MESSAGE' => '%s sitten',
-            'ERROPHP' => NULL // finish
+            'ERROPHP' => 'Anteeksi, tämä luokka vain kulkee suuremman version tai yhtä suuri kuin %s PHP!'
         ),
         // ελληνικά (Greek) - Beta
         'el' =>
@@ -404,7 +404,7 @@ abstract class makeNiceTime {
             ),
             'CURRENT' => 'μόλις τώρα',
             'MESSAGE' => '%s πριν',
-            'ERROPHP' => NULL // finish
+            'ERROPHP' => 'Δυστυχώς, αυτή η τάξη λειτουργεί μόνο στην μεγαλύτερη έκδοση ή ίση με %s της PHP!'
         )
     );
 
