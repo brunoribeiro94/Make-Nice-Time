@@ -1,0 +1,20 @@
+{
+    "name": "offboard/Make-Nice-Time",
+    "type": "library",
+    "description": "Easy make nice time using php.",
+    "keywords": ["php nicedate", "php nicetimedate","create nicedatetime],
+    "homepage": "http://github.com/offboard/Make-Nice-Time",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bruno Ribeiro",
+            "email": "brunowribeiroo@facebook.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.0.3"
+    },
+    "autoload": {
+        "psr-0": {"php-upload\\": "src/"}
+    }
+}
