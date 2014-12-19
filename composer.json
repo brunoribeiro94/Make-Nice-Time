@@ -2,7 +2,6 @@
     "name": "offboard/Make-Nice-Time",
     "type": "library",
     "description": "Easy make nice time using php.",
-    "keywords": ["php nice date", "create nice datetime"],
     "homepage": "http://github.com/offboard/Make-Nice-Time",
     "license": "MIT",
     "authors": [
