@@ -22,4 +22,4 @@ INSERT INTO `menu` (`id`, `status`, `sub`, `name`, `link`, `icone`, `position`, 
 (8, 'enabled', 1, 'Sistema', '#', 'fa-user', 11, '2014-03-05 16:05:52'),
 (10, 'disabled', 1, 'Serviços', '#', 'fa-group', 3, '2014-09-20 16:05:52'),
 (11, 'enabled', 1, 'Gerenciamento', '#', 'fa-book', 5, '2014-03-05 16:05:52'),
-(12, 'enabled', 1, 'Configuração', '#', 'fa-gear', 12, '2013-11-05 16:05:52');
+(12, 'enabled', 1, 'Configuração', '#', 'fa-gear', 12);
