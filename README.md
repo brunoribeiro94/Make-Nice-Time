@@ -44,6 +44,9 @@ themselves. To create libraries/packages please read the
 
     ``` json
     {
+        "repositories": [
+            {"type": "git", "url": "https://github.com/offboard/Make-Nice-Time"}
+        ], 
         "require": {  
             "offboard/Make-Nice-Time": "dev-master"
         }
