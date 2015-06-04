@@ -64,8 +64,8 @@ install with the latest version.
 ## Installation from Source
 ------------------------
 
-1. Run `git clone https://github.com/offboard/Make-Nice-Time.git /var/www/your-project/libs/`
-3. Include the class in your project file: `include('libs/NiceDate.php');`
+1. Run `git clone https://github.com/offboard/Make-Nice-Time.git /var/www/your-project/plugins/`
+3. Include the class in your project file: `include('plugins/NiceDate.php');`
 
 If you already use autoload, simply causes your autoload load the libs folder or any other that is installed clase `Make Nice Time`
 
@@ -77,7 +77,7 @@ If you already use autoload, simply causes your autoload load the libs folder or
 ```php
 <?php
 // Loading class required
-require_once('libs/NiceDate.php');
+require_once('plugins/NiceDate.php');
 ```
 
 ## Simple Example
@@ -85,7 +85,7 @@ require_once('libs/NiceDate.php');
 ```php
 <?php
 // Loading all required classes
-require_once('libs/NiceDate.php');
+require_once('plugins/NiceDate.php');
 
 $now = date('Y-m-d H:i:s', strtotime('-2 week'));
 // show result
@@ -98,8 +98,8 @@ echo makeNiceTime::MakeNew($now); // Example output in English : 2 weeks ago
 ```php
 <?php
 // Loading all required classes
-require_once('libs/NiceDate.php');
-require_once('config.inc.php'); // Configuration file of the database
+require_once('plugins/NiceDate.php');
+require_once('config.inc.php'); // Configuration file of your database
 
 //create connection
 $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -122,7 +122,7 @@ foreach ($result as $value) {
 ```php
 <?php
 // Loading all required classes
-require_once('libs/NiceDate.php');
+require_once('plugins/NiceDate.php');
 
 // Our date will be formatted  is current date + 12 weeks
 $now = date('Y-m-d H:i:s', strtotime('+12 week'));
@@ -142,7 +142,7 @@ echo makeNiceTime::MakeNew($now, $limit, $output);
 ```php
 <?php
 // Loading all required classes
-require_once('libs/NiceDate.php');
+require_once('plugins/NiceDate.php');
 
 $now = date('Y-m-d H:i:s', strtotime('-2 week'));
 // defines language is chosen based on browser language
@@ -157,7 +157,7 @@ echo makeNiceTime::MakeNew($now);
 ```php
 <?php
 // Loading all required classes
-require_once('libs/NiceDate.php');
+require_once('plugins/NiceDate.php');
 
 $now = date('Y-m-d H:i:s', strtotime('-2 week'));
 // defines Portuguese language as default, even being in another language standard.
