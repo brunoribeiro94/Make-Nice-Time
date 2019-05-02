@@ -47,7 +47,7 @@ class Languages extends \src\config\Config {
                 'segundos'
             ),
             'CURRENT' => 'Agora mesmo',
-            'MESSAGE' => '%s atrás',
+            'MESSAGE' => 'há %s',
             'ERROPHP' => 'Desculpe, essa classe só roda na versão maior ou igual a %s do PHP !'
         ),
         // English
